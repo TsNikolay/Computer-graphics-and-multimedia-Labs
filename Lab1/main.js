@@ -2,17 +2,10 @@ import { createBuffers } from "./buffers.js";
 import { drawScene } from "./scene.js";
 import { createShaderProgram, VSHADER_SOURCE, FSHADER_SOURCE } from "./shaders.js";
 
-window.onload = function () {
-  main();
-};
-
-function main() {
-  // Отримуємо посилання на canvas
+window.onload = function main() {
   const canvas = document.querySelector("#glcanvas");
-  // Отримуємо контекст WebGL
   const gl = canvas.getContext("webgl");
   if (!gl) {
-    // Якщо контекст не існує, виводимо повідомлення про помилку
     alert("Під час ініціалізації WebGL сталася помилка");
     return;
   }
@@ -37,11 +30,10 @@ function main() {
     requestAnimationFrame(render);
   }
   requestAnimationFrame(render);
-}
+};
 
 // Функція для створення інформації про програму шейдерів
 function createProgramInfo(gl) {
-  // Створюємо програму шейдерів
   const shaderProgram = createShaderProgram(gl, VSHADER_SOURCE, FSHADER_SOURCE);
   const programInfo = {
     program: shaderProgram,

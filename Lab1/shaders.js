@@ -1,22 +1,22 @@
 // Вершинний шейдер
 const VSHADER_SOURCE = `
-attribute vec4 aVertexPosition;
+attribute vec4 aVertexPosition;  //атрибут вершини, чьотирьохзначний вектор з позицією вершини
 attribute vec4 aVertexColor;
 
-uniform mat4 uModelViewMatrix;
-uniform mat4 uProjectionMatrix;
+uniform mat4 uModelViewMatrix;  //юніф. зм. для передачі матриць моделі-виду в шейдер
+uniform mat4 uProjectionMatrix;  //юніф. зм. для передачі проекції . Для перетв. вершин в координати екрана
 
-varying lowp vec4 vColor;
+varying lowp vec4 vColor;  //зміна , що передає  колір з вершинного шейдера у фрагментний
 
 void main(void){
-  gl_Position = uProjectionMatrix * uModelViewMatrix * aVertexPosition;
+  gl_Position = uProjectionMatrix * uModelViewMatrix * aVertexPosition; //кінцева позиція вершини
   vColor = aVertexColor;
 }
 `;
 
 // Фрагментний шейдер
 const FSHADER_SOURCE = `
-varying lowp vec4 vColor;
+varying lowp vec4 vColor; //зміна що отримана з вершинного шейдеру, колір 
 
 void main(void){
   gl_FragColor = vColor;

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <script type="text/javascript" src="libs/webgl-utils.js"></script>
+  <script type="text/javascript" src="libs/MV.js"></script>
+  <script type="module" src="main.js" module></script>
+  <link rel="stylesheet" href="styles.css" />
+  <body>
+    <canvas id="gl-canvas" width="512" height="512"
+      >> Oops ... your browser doesn't support the HTML5 canvas element
+    </canvas>
+    <div class="inputs">
+      <button id="clearButton">Clear Canvas</button>
+      <select id="colorSelect">
+        <option value="1,1,1">White</option>
+        <option value="0,0,0">Black</option>
+        <option value="1,0,0">Red</option>
+        <option value="0,1,0">Green</option>
+        <option value="0,0,1">Blue</option>
+      </select>
+      <div class="labels">
+        <label> <input type="radio" name="drawMode" value="points" checked /> Draw Points </label>
+        <label> <input type="radio" name="drawMode" value="triangles" /> Draw Triangles </label>
+        <label> <input type="radio" name="drawMode" value="circles" /> Draw Circles </label>
+      </div>
+    </div>
+  </body>
+</html>
